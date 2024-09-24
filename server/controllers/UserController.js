@@ -57,18 +57,21 @@ export const login = async (req, res) => {
 
     // Check if all fields are provided
     if (!username || !password) {
+      console.log("Missing fields: ", { username, password });
       return res.status(400).json({ message: "All fields are required 🤦‍♂️🤦‍♂️🤦‍♂️" });
     }
 
     // Find the user by username
     const user = await User.findOne({ userName: username });
     if (!user) {
+      console.log("User not found: ", username);
       return res.status(400).json({ message: "Incorrect username or password", success: false });
     }
 
     // Check if the password matches
     const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
+      console.log("Password mismatch for user: ", username);
       return res.status(400).json({ message: "Incorrect username or password", success: false });
     }
 
@@ -91,10 +94,11 @@ export const login = async (req, res) => {
         profilePhoto: user.profilePhoto,
       });
   } catch (error) {
-    console.log(error);
+    console.log("Error during login: ", error);
     res.status(500).json({ message: "Server error" });
   }
 };
+
 
 ///////////////////////
 
