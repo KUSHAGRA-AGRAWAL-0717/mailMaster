@@ -38,7 +38,7 @@ const Mails_IdsAuthorize = () => {
 
     try {
       window.open(
-        "http://localhost:5000/auth",
+        "https://mailmaster.onrender.com/auth",
         "_blank",
         "width=600,height=600"
       );

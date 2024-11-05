@@ -25,7 +25,7 @@ const EditPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/info/add-email",
+        "https://mailmaster.onrender.com/info/add-email",
         newEmail,
         {
           headers: {

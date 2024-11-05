@@ -5,7 +5,7 @@ export const fetchEmails = createAsyncThunk(
   "emails/fetchEmails",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://localhost:5000/info/emails", {
+      const response = await axios.get("https://mailmaster.onrender.com/info/emails", {
         withCredentials: true,
       });
       return response.data.emails;

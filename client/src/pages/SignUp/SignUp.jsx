@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/user/register",
+        "https://mailmaster.onrender.com/user/register",
         formData
       );
       toast.success(response.data.message || "Signup successful!");

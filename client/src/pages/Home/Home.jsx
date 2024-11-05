@@ -32,7 +32,7 @@ const Home = () => {
     const loadingToastId = toast.loading("Fetching emails...");
 
     axios
-      .get(`http://localhost:5000/check/${user.userId}`, {
+      .get(`https://mailmaster.onrender.com/check/${user.userId}`, {
         withCredentials: true,
       })
       .then((response) => {

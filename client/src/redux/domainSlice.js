@@ -92,7 +92,7 @@ export const fetchDomains = createAsyncThunk(
   "domains/fetchDomains",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://localhost:5000/info/domains", {
+      const response = await axios.get("https://mailmaster.onrender.com/info/domains", {
         withCredentials: true,
       });
       return response.data.domains;
@@ -110,7 +110,7 @@ export const addDomain = createAsyncThunk(
   async (domainName, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/info/add-domain",
+        "https://mailmaster.onrender.com/info/add-domain",
         { domainName },
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );

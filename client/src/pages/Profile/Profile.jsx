@@ -27,7 +27,7 @@ const Profile = () => {
 
   const LogoutHandler = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/user/logout", {
+      const response = await axios.get("https://mailmaster.onrender.com/user/logout", {
         withCredentials: true,
       });
       if (response.status === 200) {
