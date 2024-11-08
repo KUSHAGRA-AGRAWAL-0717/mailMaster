@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000","https://mail-master.vercel.app"],
+    origin: "https://mail-master.vercel.app/",
     credentials: true,
   })
 );
